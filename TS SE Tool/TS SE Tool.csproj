@@ -148,6 +148,8 @@
     <Compile Include="CustomClasses\Save\Items\Bank_Loan.cs" />
     <Compile Include="CustomClasses\Save\Items\Bus_job_Log.cs" />
     <Compile Include="CustomClasses\Save\Items\Bus_stop.cs" />
+    <Compile Include="CustomClasses\Save\Items\Car_Job_Generator.cs" />
+    <Compile Include="CustomClasses\Save\Items\Car_Job_Log.cs" />
     <Compile Include="CustomClasses\Save\Items\Company.cs" />
     <Compile Include="CustomClasses\Save\Items\Delivery_log.cs" />
     <Compile Include="CustomClasses\Save\Items\Delivery_log_Entry.cs" />
@@ -174,7 +176,10 @@
     <Compile Include="CustomClasses\Save\Items\Player.cs" />
     <Compile Include="CustomClasses\Save\ItemsExtra\PlayerJob.cs" />
     <Compile Include="CustomClasses\Save\Items\Player_Job.cs" />
+    <Compile Include="CustomClasses\Save\Items\Player_Vehicles.cs" />
     <Compile Include="CustomClasses\Save\Items\Police_Ctrl.cs" />
+    <Compile Include="CustomClasses\Save\Items\Police_Offence_Log.cs" />
+    <Compile Include="CustomClasses\Save\Items\Police_Offence_Log_Entry.cs" />
     <Compile Include="CustomClasses\Save\Items\Profit_log.cs" />
     <Compile Include="CustomClasses\Save\Items\Profit_log_Entry.cs" />
     <Compile Include="CustomClasses\Save\Items\Registry.cs" />
@@ -188,6 +193,8 @@
     <Compile Include="CustomClasses\Save\Items\Trajectory_orders_Save.cs" />
     <Compile Include="CustomClasses\Save\Items\Transport_Data.cs" />
     <Compile Include="CustomClasses\Save\Items\Unidentified.cs" />
+    <Compile Include="CustomClasses\Save\Items\Used_Truck_Offer.cs" />
+    <Compile Include="CustomClasses\Save\Items\Used_Vehicle_Assortment.cs" />
     <Compile Include="CustomClasses\Save\Items\Vehicle.cs" />
     <Compile Include="CustomClasses\Save\Items\Vehicle_Cargo_Accessory.cs" />
     <Compile Include="CustomClasses\Save\Items\Vehicle_Drv_plate_Accessory.cs" />
@@ -196,6 +203,13 @@
     <Compile Include="CustomClasses\Save\Items\Vehicle_Wheel_Accessory.cs" />
     <Compile Include="CustomClasses\Save\Items\Vehicle_Addon_Accessory.cs" />
     <Compile Include="CustomClasses\Save\Items\Vehicle_Accessory.cs" />
+    <Compile Include="CustomClasses\Save\Items\Player_Vehicles.cs" />
+    <Compile Include="CustomClasses\Save\Items\Police_Offence_Log.cs" />
+    <Compile Include="CustomClasses\Save\Items\Police_Offence_Log_Entry.cs" />
+    <Compile Include="CustomClasses\Save\Items\Used_Vehicle_Assortment.cs" />
+    <Compile Include="CustomClasses\Save\Items\Used_Truck_Offer.cs" />
+    <Compile Include="CustomClasses\Save\Items\Car_Job_Log.cs" />
+    <Compile Include="CustomClasses\Save\Items\Car_Job_Generator.cs" />
     <Compile Include="CustomClasses\SCSFontLetter.cs" />
     <Compile Include="CustomClasses\SCSLicensePlate.cs" />
     <Compile Include="CustomClasses\Utilities\AssemblyData.cs" />
@@ -379,6 +393,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormSettings.resx">
       <DependentUpon>FormSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormShareUserColors.resx">
       <DependentUpon>FormShareUserColors.cs</DependentUpon>
