@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+   ETS2 / ATS 1.61 compatibility additions
+   Copyright 2026 rusplane <https://rusplane.dev>
+
+   Based on TS SE Tool by LIPtoH.
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 

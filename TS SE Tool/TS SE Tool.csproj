@@ -203,13 +203,6 @@
     <Compile Include="CustomClasses\Save\Items\Vehicle_Wheel_Accessory.cs" />
     <Compile Include="CustomClasses\Save\Items\Vehicle_Addon_Accessory.cs" />
     <Compile Include="CustomClasses\Save\Items\Vehicle_Accessory.cs" />
-    <Compile Include="CustomClasses\Save\Items\Player_Vehicles.cs" />
-    <Compile Include="CustomClasses\Save\Items\Police_Offence_Log.cs" />
-    <Compile Include="CustomClasses\Save\Items\Police_Offence_Log_Entry.cs" />
-    <Compile Include="CustomClasses\Save\Items\Used_Vehicle_Assortment.cs" />
-    <Compile Include="CustomClasses\Save\Items\Used_Truck_Offer.cs" />
-    <Compile Include="CustomClasses\Save\Items\Car_Job_Log.cs" />
-    <Compile Include="CustomClasses\Save\Items\Car_Job_Generator.cs" />
     <Compile Include="CustomClasses\SCSFontLetter.cs" />
     <Compile Include="CustomClasses\SCSLicensePlate.cs" />
     <Compile Include="CustomClasses\Utilities\AssemblyData.cs" />
@@ -462,7 +455,26 @@ xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\Nativ
 if not exist "$(TargetDir)libs\amd64\" md "$(TargetDir)libs\amd64\"
 xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\amd64\*.*" "$(TargetDir)libs\amd64\"
 
-ROBOCOPY "$(TargetDir) " "$(TargetDir)libs\ " /XF *.exe *.sdf *.config *.manifest *.cfg *.csv *.log *.pdb *.pdf  /XD gameref img libs logs lang dbs updater /E /IS /MOVE
-if %25errorlevel%25 leq 4 exit 0 else exit %25errorlevel%25</PostBuildEvent>
+if not exist "$(TargetDir)libs" mkdir "$(TargetDir)libs"
+
+move /Y "$(TargetDir)ErikEJ.SqlCe40.dll" "$(TargetDir)libs\" 2&gt;nul
+move /Y "$(TargetDir)ICSharpCode.SharpZipLib.dll" "$(TargetDir)libs\" 2&gt;nul
+move /Y "$(TargetDir)OpenPainter.ColorPicker.dll" "$(TargetDir)libs\" 2&gt;nul
+move /Y "$(TargetDir)Salient.Data.dll" "$(TargetDir)libs\" 2&gt;nul
+move /Y "$(TargetDir)SII_Decrypt.dll" "$(TargetDir)libs\" 2&gt;nul
+move /Y "$(TargetDir)System.Data.SqlServerCe.dll" "$(TargetDir)libs\" 2&gt;nul
+
+exit /b 0</PostBuildEvent>
   </PropertyGroup>
+  <Target Name="CopyImgFolder" AfterTargets="Build">
+    <ItemGroup>
+      <ImgFiles Include="$(ProjectDir)ImgResources\**\*.*" />
+    </ItemGroup>
+  
+    <Copy
+      SourceFiles="@(ImgFiles)"
+      DestinationFiles="@(ImgFiles->'$(TargetDir)img\%(RecursiveDir)%(Filename)%(Extension)')"
+      SkipUnchangedFiles="true"
+    />
+  </Target>
 </Project>
